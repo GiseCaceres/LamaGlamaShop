@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
 import {useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ItemCount = ({ stock, initial, addCarrito  }) => {
+const ItemCount = ({ stock, addCarrito  }) => {
 
-    const [contador, setContador] = useState(initial);
+    const [contador, setContador] = useState(0);
   
     const increment = () => {
       if (contador < stock) {
@@ -14,16 +12,19 @@ const ItemCount = ({ stock, initial, addCarrito  }) => {
     };
   
     const decrement = () => {
-      if (contador > initial) {
+      if (contador > 0) {
   
         setContador(contador - 1);
   
       }
     };
-  
+    
+
+
     const agregar = () => {
-      addCarrito(contador);
+      addCarrito={contador};
       alert(`se agregaron ${contador} productos al carrito`);
+      console.log(agregar);
     };
   
     return (
@@ -49,6 +50,7 @@ const ItemCount = ({ stock, initial, addCarrito  }) => {
         </div>
   
         <button className="w-44 h-8 text-white bg-black rounded-md shadow-2xl" onClick={agregar}>agregar al carrito</button>
+      
   
       </div>
   
