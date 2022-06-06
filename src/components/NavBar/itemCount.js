@@ -50,8 +50,6 @@ const ItemCount = ({ stock, addCarrito  }) => {
         </div>
   
         <button className="w-44 h-8 text-white bg-black rounded-md shadow-2xl" onClick={agregar} style={{margin:'1rem'}}>agregar al carrito</button>
-      
-  
       </div>
   
     );
