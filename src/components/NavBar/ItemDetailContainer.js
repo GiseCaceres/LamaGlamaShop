@@ -11,7 +11,7 @@ const ItemDetailContainer = () =>{
 
     useEffect(() => {
         getData
-            .then(result => setDato(result[2]))
+            .then(result => setDato(result[1]))
             .catch(error => console.log(error))
     },  []);
     //console.log(productos)

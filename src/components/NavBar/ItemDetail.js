@@ -5,9 +5,9 @@ const {addCarrito} = require  ("../NavBar/itemCount");
 const ItemDetail = ({producto}) => {
     return(
         
-        <>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={productos.image} />
+        <div style={{ margin: '5rem'}}>
+            <Card style={{ width: '18rem'}}>
+                <Card.Img variant="top" src={producto.image} />
                 <Card.Body>
                     <Card.Title>{producto.name}</Card.Title>
                     <Card.Text>{producto.description}</Card.Text>
@@ -20,7 +20,7 @@ const ItemDetail = ({producto}) => {
                 <ItemCount addCarrito={addCarrito} stock={10} initial={0}/>
             </Card>  
   
-        </>
+        </div>
     )
 }
 
