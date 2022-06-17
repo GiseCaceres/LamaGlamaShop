@@ -1,11 +1,22 @@
 import ItemCount from "./itemCount";
+import {useState} from 'react'; 
 import { Card, ListGroup, ListGroupItem} from 'react-bootstrap';
-const {addCarrito} = require  ("../NavBar/itemCount");
+import {Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 
 const ItemDetail = ({producto}) => {
+
+    const [itemCount, setItemCount] = useState (0);
+
+    const onAdd = (qty) => {
+        alert("Selecciono " + qty + " productos");
+        setItemCount(qty);
+    }
+
     return(
         
-        <div style={{ margin: '5rem'}}>
+        <div className="text-center" style={{ margin: '5rem'}}>
             <Card style={{ width: '18rem'}}>
                 <Card.Img variant="top" src={producto.image}/>
                 <Card.Body>
@@ -13,12 +24,17 @@ const ItemDetail = ({producto}) => {
                     <Card.Text>{producto.description}</Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>{producto.stock}</ListGroupItem>
+                    <ListGroupItem>Stock: {producto.stock}</ListGroupItem>
                     <ListGroupItem>{producto.cost}</ListGroupItem>
                 </ListGroup>
-                <ItemCount addCarrito={addCarrito} stock={producto.stock} initial={0}/>
+                {
+                itemCount === 0
+                ?<ItemCount stock={producto.stock} initial={itemCount} onAdd={onAdd}/>
+                : <Button variant="danger" ><Link to='/Cart' style={{textDecoration: "none", color: "black"}}>Verificar pedido</Link></Button>
+                
+            }
             </Card>  
-  
+        
         </div>
     )
 }
