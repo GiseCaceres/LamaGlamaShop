@@ -29,7 +29,7 @@ const ItemCount = ({ stock, addCarrito  }) => {
   
     return (
   
-      <div className="flex gap-8 mt-4">
+      <div className="flex gap-8 mt-4 ">
   
         <div className="flex ml-4 text-xl font-semibold">
   

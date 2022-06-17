@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
 import {Navbar,Nav,Container} from 'react-bootstrap';
 import Icons from './CartWidget';
+import {Link} from 'react-router-dom';
+
 
 const NavBarComp = ({carrito}) =>{
     console.log(carrito);
@@ -9,14 +10,14 @@ const NavBarComp = ({carrito}) =>{
             <div>
                 <Navbar bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="/Home.js">LamaGlama Shop</Navbar.Brand>
+                        <Navbar.Brand><Link to='/' style={{color: 'white', textDecoration: 'none'}}>LamaGlama Shop</Link></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="/pages/Home.js">HOME</Nav.Link>
-                                <Nav.Link href="/pages/lentes.js">LENTES</Nav.Link>
-                                <Nav.Link href="/pages/medias.js">MEDIAS</Nav.Link>
-                                <Nav.Link href="/pages/contactanos.js">CONTACTANOS</Nav.Link>
+                                <Nav.Link><Link to='/' style={{color: 'white', textDecoration: 'none'}}>HOME</Link></Nav.Link>
+                                <Nav.Link><Link to='/categoryId/1' style={{color: 'white', textDecoration: 'none'}}>LENTES</Link></Nav.Link>
+                                <Nav.Link><Link to='/categoryId/2' style={{color: 'white', textDecoration: 'none'}}>MEDIAS</Link></Nav.Link>
+                                <Nav.Link><Link to='/categoryId/3' style={{color: 'white', textDecoration: 'none'}}>CUADERNOS</Link></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                         <Icons carrito={carrito} />
