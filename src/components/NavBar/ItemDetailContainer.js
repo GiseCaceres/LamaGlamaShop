@@ -14,7 +14,7 @@ const ItemDetailContainer = () =>{
         getData
             .then(result => setDato(result.find(item => item.id === parseInt(id))))
             .catch(error => console.log(error))
-    },  []);
+    },  [id]);
     //console.log(productos)
 
     return(
