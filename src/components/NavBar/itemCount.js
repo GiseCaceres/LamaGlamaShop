@@ -20,18 +20,12 @@ const ItemCount = ({ stock, addCarrito, onAdd }) => {
       }
     };
     
-    // const agregar = () => {
-    //   addCarrito={contador};
-    //   alert(`se agregaron ${contador} productos al carrito`);
-    //   console.log(agregar);
-    // };
-  
     return (
   
       <div>
   
         <div className="text-center m-2">
-          <Button variant="dark"  onClick={increment} >+</Button>
+          <Button variant="dark"  onClick={increment}>+</Button>
           <span className="m-2">{contador}</span>
           <Button variant="dark"  onClick={decrement}>-</Button>
         </div>

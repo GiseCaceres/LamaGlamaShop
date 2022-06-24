@@ -21,7 +21,7 @@ const ItemDetail = ({producto}) => {
     return(
         
         <div className="text-center" style={{ margin: '5rem'}}>
-            <Card style={{ width: '18rem', width:'40%'}}>
+            <Card style={{width:'40%'}}>
                 <Card.Img variant="top" src={producto.image}/>
                 <Card.Body>
                     <Card.Title>{producto.name}</Card.Title>
