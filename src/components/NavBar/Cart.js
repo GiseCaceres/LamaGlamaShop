@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 
 
@@ -28,26 +27,19 @@ const Cart = () => {
                 {
                     test.cartList.length > 0 ? 
                     test.cartList.map(producto=> 
-                        <Container className= "d-flex justify-left" style={{margin:'3%'}}>
-                                    <Card style={{ width: '18rem' }}>
-                                        <Card.Body >
-                                            <Card.Img variant="top" src={producto.imgItem} />
-                                            <Card.Title>{producto.nameItem}</Card.Title>
-                                            <Card.Text>{producto.descriptionItem}</Card.Text>
-                                            <Card.Text>Precio por unidad: {producto.costItem}</Card.Text>
-                                            <Card.Text>Cantidad: {producto.qtyItem}</Card.Text>
-                                            <Button onClick={() => test.deleteItem(producto.idItem)}>Borrar producto</Button>
-                                        </Card.Body>
-                                    </Card>            
-                        </Container>               
-                        )
-                    :<h1></h1>
-                        
+                            <div className="card text-center" style={{width:'15rem', margin:'2rem'}}>
+                                <img src={producto.imgItem} className="card-img-top" alt={producto.nameItem}/>
+                                <div className="card-body">
+                                    <p className="card-text">{producto.nameItem}</p>
+                                    <p className="card-text">Precio por unidad:{producto.costItem}</p>
+                                    <p className="card-text">Precio por unidad:{producto.qtyItem}</p>
+                                </div>  
+                                <Button onClick={() => test.deleteItem(producto.idItem)}>Borrar producto</Button>
+                            </div>
+
+                    ):<h1></h1>         
                 }
-          
-        </div>
-            
-              
+        </div>       
     )   
 }    
 

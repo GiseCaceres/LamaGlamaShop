@@ -6,7 +6,7 @@ import { CartContext } from './CartContext';
 
 
 
-const Icons = ({carrito}) =>{
+const Icons = () =>{
 
     const test = useContext(CartContext);
 
